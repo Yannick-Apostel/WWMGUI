@@ -1,0 +1,13 @@
+root{
+	/*body*/
+}
+
+#lblTitle{ /*STart view */
+	-fx-alignment:center;
+	-fx-font-size: 45;
+}
+
+#lblQuestion{ /*Game View */
+	-fx-alignment:center;
+	-fx-font-size: 45;
+}
