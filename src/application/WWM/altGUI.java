@@ -177,6 +177,7 @@ public class altGUI
         panel.add(nsB, c);
         c.gridy = 2;
         panel.add(exitB, c);
+        
     }
     
     public void setFrage(Frage aktuelleFrage) {
