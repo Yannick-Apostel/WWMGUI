@@ -12,5 +12,6 @@
       <Button fx:id="btnAnswC" layoutX="140.0" layoutY="465.0" mnemonicParsing="false" onAction="#btndown_AnswC" prefHeight="25.0" prefWidth="180.0" text="btnAnswC" />
       <Button fx:id="btnAnswD" layoutX="522.0" layoutY="465.0" mnemonicParsing="false" onAction="#btndown_AnswD" prefHeight="25.0" prefWidth="180.0" text="btnAnswD" />
       <Button fx:id="btnJoker" layoutX="333.0" layoutY="543.0" mnemonicParsing="false" onAction="#switchToJoker" prefHeight="25.0" prefWidth="180.0" text="btnJoker" />
+      <Button id="btnLeave" layoutX="14.0" layoutY="564.0" mnemonicParsing="false" text="btnLeave" />
    </children>
 </AnchorPane>
