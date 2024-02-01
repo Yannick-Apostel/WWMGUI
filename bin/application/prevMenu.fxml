@@ -9,31 +9,31 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
-      <Button layoutX="525.0" layoutY="363.0" mnemonicParsing="false" text="bestätigen" />
+      <Button layoutX="525.0" layoutY="363.0" mnemonicParsing="false" onAction="#ssBestaetigen" text="bestätigen" />
       <Group />
       <Group layoutX="-38.0" layoutY="378.0" />
-      <Button layoutX="431.0" layoutY="318.0" mnemonicParsing="false" text="zurück" />
+      <Button layoutX="415.0" layoutY="363.0" mnemonicParsing="false" text="zurück" />
       <VBox layoutX="84.0" layoutY="22.0" prefHeight="455.0" prefWidth="126.0">
          <children>
-            <RadioButton mnemonicParsing="false" text="50€">
+            <RadioButton fx:id="rb1" mnemonicParsing="false" text="50€">
                <toggleGroup>
                   <ToggleGroup fx:id="VBox" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" text="100€" toggleGroup="$VBox" />
-            <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$VBox" />
-            <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$VBox" />
-            <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$VBox" />
-            <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$VBox" />
-            <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$VBox" />
-            <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$VBox" />
-            <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$VBox" />
-            <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$VBox" />
-            <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$VBox" />
-            <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$VBox" />
-            <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$VBox" />
-            <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$VBox" />
-            <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$VBox" />
+            <RadioButton fx:id="rb2" mnemonicParsing="false" text="100€" toggleGroup="$VBox" />
+            <RadioButton fx:id="rb3" mnemonicParsing="false" text="200€" toggleGroup="$VBox" />
+            <RadioButton fx:id="rb4" mnemonicParsing="false" text="300€" toggleGroup="$VBox" />
+            <RadioButton fx:id="rb5" mnemonicParsing="false" text="500€" toggleGroup="$VBox" />
+            <RadioButton fx:id="rb6" mnemonicParsing="false" text="1.000€" toggleGroup="$VBox" />
+            <RadioButton fx:id="rb7" mnemonicParsing="false" text="2.000€" toggleGroup="$VBox" />
+            <RadioButton fx:id="rb8" mnemonicParsing="false" text="4.000€" toggleGroup="$VBox" />
+            <RadioButton fx:id="rb9" mnemonicParsing="false" text="8.000€" toggleGroup="$VBox" />
+            <RadioButton fx:id="rb10" mnemonicParsing="false" text="16.000€" toggleGroup="$VBox" />
+            <RadioButton fx:id="rb11" mnemonicParsing="false" text="32.000€" toggleGroup="$VBox" />
+            <RadioButton fx:id="rb12" mnemonicParsing="false" text="64.000€" toggleGroup="$VBox" />
+            <RadioButton fx:id="rb13" mnemonicParsing="false" text="125.000€" toggleGroup="$VBox" />
+            <RadioButton fx:id="rb14" mnemonicParsing="false" text="500.000€" toggleGroup="$VBox" />
+            <RadioButton fx:id="rb15" mnemonicParsing="false" text="1.000.000€" toggleGroup="$VBox" />
          </children>
       </VBox>
    </children>
