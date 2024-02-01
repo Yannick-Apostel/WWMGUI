@@ -10,12 +10,12 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
 
-public class Main  {
-	//@Override
-	/*public void start(Stage primaryStage) {
+public class Main extends Application {
+	@Override
+	public void start(Stage primaryStage) {
 		try {
-			
-			Parent root1 = FXMLLoader.load(getClass().getResource("Main.fxml"));
+
+			Parent root1 = FXMLLoader.load(getClass().getResource("prevMenu.fxml"));
 			Scene scene = new Scene(root1);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
@@ -24,13 +24,16 @@ public class Main  {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		launch(args);
-	}*/
-	
-	public static void main(String[] args) {
-		altGUI test = new altGUI();
-		//application.WWM.Read reader = new application.WWM.Read();
 	}
+
+	
+	
+
+	/*public static void main(String[] args) {
+		//altGUI test = new altGUI();
+		application.WWM.Read reader = new application.WWM.Read();
+	}*/
 }
