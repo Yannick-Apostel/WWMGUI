@@ -42,10 +42,13 @@ public class Main extends Application {
 	}
 	
 	public static void ssSetzen(Stufe stufe) {
-		if (wwm.getAktuellesSpiel().getSicherheitsStufe1()==null) {
-            if (stufe.getLevel()!=0 && stufe.getGeld()!=0 && stufe.getGeldString()!=null) {
+		if (wwm.getAktuellesSpiel().getSicherheitsStufe1()==null && stufe.getLevel()!=0) {
                 wwm.getAktuellesSpiel().setSicherheitsStufe1(stufe);
-			}
+                System.out.println(wwm.getAktuellesSpiel().getSicherheitsStufe1().getGeld());
+      	} else if (wwm.getAktuellesSpiel().getSicherheitsStufe2()==null && stufe.getGeld()>=wwm.getAktuellesSpiel().getSicherheitsStufe1().getGeld() && stufe.getLevel()!=0) {
+      		wwm.getAktuellesSpiel().setSicherheitsStufe2(stufe);
+      		System.out.println(wwm.getAktuellesSpiel().getSicherheitsStufe2().getGeld());
+      		// nächste szene öffnen
       	}
 	}
 }

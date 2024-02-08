@@ -75,40 +75,43 @@ public class Controller {
 		
 		RadioButton selectedRadioButton = (RadioButton) VBox.getSelectedToggle();
 		String toogleGroupValue = selectedRadioButton.getText();
-		System.out.print(toogleGroupValue);
 	
             Stufe stufe = new Stufe();
             if (selectedRadioButton.getText().equals("50€"))        {
                 stufe = new Stufe(1);
-            } else if (selectedRadioButton.getText().equals("50€")) {
+            } else if (selectedRadioButton.getText().equals("100€")) {
                 stufe = new Stufe(2);
-            } else if (selectedRadioButton.getText().equals("50€")) {
+            } else if (selectedRadioButton.getText().equals("200€")) {
                 stufe = new Stufe(3);
-            } else if (selectedRadioButton.getText().equals("50€")) {
+            } else if (selectedRadioButton.getText().equals("300€")) {
                 stufe = new Stufe(4);
-            } else if (selectedRadioButton.getText().equals("50€")) {
+            } else if (selectedRadioButton.getText().equals("500€")) {
                 stufe = new Stufe(5);
-            } else if (selectedRadioButton.getText().equals("50€")) {
+            } else if (selectedRadioButton.getText().equals("1.000€")) {
                 stufe = new Stufe(6);
-            } else if (selectedRadioButton.getText().equals("50€")) {
+            } else if (selectedRadioButton.getText().equals("2.000€")) {
                 stufe = new Stufe(7);
-            } else if (selectedRadioButton.getText().equals("50€")) {
+            } else if (selectedRadioButton.getText().equals("4.000€")) {
                 stufe = new Stufe(8);
-            } else if (selectedRadioButton.getText().equals("50€")) {
+            } else if (selectedRadioButton.getText().equals("8.000€")) {
                 stufe = new Stufe(9);
-            } else if (selectedRadioButton.getText().equals("50€")) {
+            } else if (selectedRadioButton.getText().equals("16.000€")) {
                 stufe = new Stufe(10);
-            } else if (selectedRadioButton.getText().equals("50€")) {
+            } else if (selectedRadioButton.getText().equals("32.000€")) {
                 stufe = new Stufe(11);
-            } else if (selectedRadioButton.getText().equals("50€")) {
+            } else if (selectedRadioButton.getText().equals("64.000€")) {
                 stufe = new Stufe(12);
-            } else if (selectedRadioButton.getText().equals("50€")) {
+            } else if (selectedRadioButton.getText().equals("125.000€")) {
                 stufe = new Stufe(13);
-            } else if (selectedRadioButton.getText().equals("50€")) {
+            } else if (selectedRadioButton.getText().equals("500.000€")) {
                 stufe = new Stufe(14);
-            } else if (selectedRadioButton.getText().equals("50€")) {
+            } else if (selectedRadioButton.getText().equals("1.000.000€")) {
                 stufe = new Stufe(15);
+            } else {
+            	stufe = new Stufe(0);
+            	System.out.println("Lol");
             }
+            
             /*if (aktuellesSpiel.getSicherheitsStufe1()==null) {
                 if (stufe.getLevel()!=0 && stufe.getGeld()!=0 && stufe.getGeldString()!=null) {
                     aktuellesSpiel.setSicherheitsStufe1(stufe);
@@ -116,6 +119,15 @@ public class Controller {
 				}
           	}*/
             Main.ssSetzen(stufe);
+	}
+	
+	public void switchToMenu(ActionEvent event) throws IOException {
+		root2 = FXMLLoader.load(getClass().getResource("Main.fxml"));
+	    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root2);
+        scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
 	}
 
 }

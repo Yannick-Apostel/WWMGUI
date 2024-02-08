@@ -12,10 +12,10 @@
       <Button layoutX="525.0" layoutY="363.0" mnemonicParsing="false" onAction="#ssBestaetigen" text="bestätigen" />
       <Group />
       <Group layoutX="-38.0" layoutY="378.0" />
-      <Button layoutX="415.0" layoutY="363.0" mnemonicParsing="false" text="zurück" />
+      <Button layoutX="415.0" layoutY="363.0" mnemonicParsing="false" onAction="#switchToMenu" text="zurück" />
       <VBox layoutX="84.0" layoutY="22.0" prefHeight="455.0" prefWidth="126.0">
          <children>
-            <RadioButton fx:id="rb1" mnemonicParsing="false" text="50€">
+            <RadioButton fx:id="rb1" mnemonicParsing="false" selected="true" text="50€">
                <toggleGroup>
                   <ToggleGroup fx:id="VBox" />
                </toggleGroup>
