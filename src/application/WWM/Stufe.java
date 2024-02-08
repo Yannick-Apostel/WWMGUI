@@ -11,6 +11,7 @@ public class Stufe
     }
     public Stufe(int level) {
         switch (level) {
+        	case 0: setGeldString("0€"); setGeld(0); setLevel(level); break;
             case 1: setGeldString("50€"); setGeld(50); setLevel(level); break;
             case 2: setGeldString("100€"); setGeld(100); setLevel(level); break;
             case 3: setGeldString("200€"); setGeld(200); setLevel(level); break;
@@ -28,6 +29,7 @@ public class Stufe
             case 15: setGeldString("1.000.000€"); setGeld(1000000); setLevel(level); break;
         }
     }
+    
     
     public void setGeld(int geld) {
         this.geld = geld;
