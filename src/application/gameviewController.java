@@ -35,8 +35,11 @@ public class gameviewController {
 		btnAnswD.setText(frage.getAntwortenListe().get(3).getText());
 	}
 	
-	public void btndown_AnswA(ActionEvent e) {
-		Main.antwortAuswertung(aktuelleFrage, 0);
+	public void btndown_AnswA(ActionEvent e) throws IOException {
+		if(Main.antwortAuswertung(aktuelleFrage, 0) == false) {
+			switchToTryAgain(e);
+		}
+		;
 	}
 	public void btndown_AnswB(ActionEvent e) {
 		Main.antwortAuswertung(aktuelleFrage, 1);
@@ -58,4 +61,15 @@ public void switchToJoker(ActionEvent event) throws IOException {
         stage.show();
         System.out.println("Succed!");
 	 } 
+
+public void switchToTryAgain(ActionEvent event) throws IOException {
+	
+    root2 = FXMLLoader.load(getClass().getResource("tryAgain.fxml"));
+    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    scene = new Scene(root2);
+    scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+    stage.setScene(scene);
+    stage.show();
+    
+ } 
 }
