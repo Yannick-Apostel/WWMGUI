@@ -2,17 +2,20 @@ package application;
 
 	
 import application.WWM.altGUI;
+import application.WWM.Frage;
 import application.WWM.Stufe;
 import application.WWM.WWM;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
-
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
 public class Main extends Application {
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -48,7 +51,22 @@ public class Main extends Application {
       	} else if (wwm.getAktuellesSpiel().getSicherheitsStufe2()==null && stufe.getGeld()>=wwm.getAktuellesSpiel().getSicherheitsStufe1().getGeld() && stufe.getLevel()!=0) {
       		wwm.getAktuellesSpiel().setSicherheitsStufe2(stufe);
       		System.out.println(wwm.getAktuellesSpiel().getSicherheitsStufe2().getGeld());
-      		// nächste szene öffnen
+      		
       	}
 	}
+	
+	public static Frage nF() {
+		 return wwm.getAktuellesSpiel().getNächsteFrage();
+	}
+	
+	public static boolean antwortAuswertung(Frage aktuelleFrage, int antwort) {
+        if (aktuelleFrage.getAntwortenListe().get(antwort).getIstRichtig()==true) {
+        	System.out.print("Richtig");
+            return true;
+        } else {
+        	System.out.print("Falsch");
+            return false;
+        }
+    }
+	
 }
