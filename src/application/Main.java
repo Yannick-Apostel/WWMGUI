@@ -2,6 +2,7 @@ package application;
 
 	
 import application.WWM.altGUI;
+import application.WWM.Frage;
 import application.WWM.Stufe;
 import application.WWM.WWM;
 import javafx.application.Application;
@@ -54,9 +55,15 @@ public class Main extends Application {
       	}
 	}
 	
-	public static void naechsteFrage(Label frageText) {
-		
-		System.out.print(frageText.getText());
+	public static String naechsteFrage() {
+		return wwm.getAktuellesSpiel().getNächsteFrage().getText();
+	}
+	public static String n() {
+		return wwm.getAktuellesSpiel().getFrageNr(0).getText();
+	}
+	
+	public static Frage nF() {
+		 return wwm.getAktuellesSpiel().getNächsteFrage();
 	}
 	
 }

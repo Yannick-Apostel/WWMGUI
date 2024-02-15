@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 
+import application.WWM.Frage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,13 +18,26 @@ public class gameviewController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root2;
-	@FXML 
-	Button btnAnswA; 
+	
+	@FXML Button btnAnswA; 
+	@FXML Button btnAnswB; 
+	@FXML Button btnAnswC; 
+	@FXML Button btnAnswD; 
 	@FXML Label label1;
 	
-	public void zeigeFrage() {
-		System.out.print("Ha");
-		label1.setText("Hallo");
+	public void zeigeFrage(String Frage, String AntwortA, String AntwortB, String AntwortC, String AntwortD) {
+		label1.setText(Frage);
+		btnAnswA.setText(AntwortA);
+		btnAnswB.setText(AntwortA);
+		btnAnswC.setText(AntwortA);
+		btnAnswD.setText(AntwortA);
+	}
+	public void zeigeFrage(Frage frage) {
+		label1.setText(frage.getText());
+		btnAnswA.setText(frage.getAntwortenListe().get(0).getText());
+		btnAnswB.setText(frage.getAntwortenListe().get(1).getText());
+		btnAnswC.setText(frage.getAntwortenListe().get(2).getText());
+		btnAnswD.setText(frage.getAntwortenListe().get(3).getText());
 	}
 	
 public void btndown_AnswA(ActionEvent e) {

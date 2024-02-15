@@ -116,14 +116,14 @@ public class Controller {
 	
 	public void switchToGameView(ActionEvent event) throws IOException {
 		FXMLLoader scene2Loader = new FXMLLoader(getClass().getResource("Game.fxml"));
-		Parent root4 = scene2Loader.load();
+		Parent root2 = scene2Loader.load();
 		gameviewController scene2Controller = scene2Loader.getController();
 		
-		scene2Controller.zeigeFrage();
+		scene2Controller.zeigeFrage(Main.nF());
 		
 		
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root4);
+		scene = new Scene(root2);
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		stage.setScene(scene);
 		stage.show();
