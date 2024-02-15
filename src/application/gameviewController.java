@@ -25,14 +25,9 @@ public class gameviewController {
 	@FXML Button btnAnswD; 
 	@FXML Label label1;
 	
-	public void zeigeFrage(String Frage, String AntwortA, String AntwortB, String AntwortC, String AntwortD) {
-		label1.setText(Frage);
-		btnAnswA.setText(AntwortA);
-		btnAnswB.setText(AntwortA);
-		btnAnswC.setText(AntwortA);
-		btnAnswD.setText(AntwortA);
-	}
+	Frage aktuelleFrage;
 	public void zeigeFrage(Frage frage) {
+		aktuelleFrage = frage;
 		label1.setText(frage.getText());
 		btnAnswA.setText(frage.getAntwortenListe().get(0).getText());
 		btnAnswB.setText(frage.getAntwortenListe().get(1).getText());
@@ -40,17 +35,17 @@ public class gameviewController {
 		btnAnswD.setText(frage.getAntwortenListe().get(3).getText());
 	}
 	
-public void btndown_AnswA(ActionEvent e) {
-		
+	public void btndown_AnswA(ActionEvent e) {
+		Main.antwortAuswertung(aktuelleFrage, 0);
 	}
 	public void btndown_AnswB(ActionEvent e) {
-		
+		Main.antwortAuswertung(aktuelleFrage, 1);
 	}
 	public void btndown_AnswC(ActionEvent e) {
-	
+		Main.antwortAuswertung(aktuelleFrage, 2);
 	}
 	public void btndown_AnswD(ActionEvent e) {
-	
+		Main.antwortAuswertung(aktuelleFrage, 3);
 	}
 	
 public void switchToJoker(ActionEvent event) throws IOException {

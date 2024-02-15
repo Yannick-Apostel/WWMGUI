@@ -55,15 +55,18 @@ public class Main extends Application {
       	}
 	}
 	
-	public static String naechsteFrage() {
-		return wwm.getAktuellesSpiel().getNächsteFrage().getText();
-	}
-	public static String n() {
-		return wwm.getAktuellesSpiel().getFrageNr(0).getText();
-	}
-	
 	public static Frage nF() {
 		 return wwm.getAktuellesSpiel().getNächsteFrage();
 	}
+	
+	public static boolean antwortAuswertung(Frage aktuelleFrage, int antwort) {
+        if (aktuelleFrage.getAntwortenListe().get(antwort).getIstRichtig()==true) {
+        	System.out.print("Richtig");
+            return true;
+        } else {
+        	System.out.print("Falsch");
+            return false;
+        }
+    }
 	
 }
