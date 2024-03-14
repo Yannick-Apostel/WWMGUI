@@ -20,7 +20,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 
-			Parent root1 = FXMLLoader.load(getClass().getResource("prevMenu.fxml"));
+			Parent root1 = FXMLLoader.load(getClass().getResource("Main.fxml"));
 			Scene scene = new Scene(root1);
 			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

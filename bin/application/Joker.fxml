@@ -10,5 +10,6 @@
       <Button fx:id="btnPSJ" layoutX="306.0" layoutY="212.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" text="btnPSJ" />
       <Button fx:id="btnTNJ" layoutX="306.0" layoutY="264.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" text="btnTNJ" />
       <Button fx:id="btnFFJ" layoutX="306.0" layoutY="324.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" text="btnFFJ" />
+      <Button fx:id="btnBack" layoutX="38.0" layoutY="496.0" mnemonicParsing="false" text="btnBack" />
    </children>
 </AnchorPane>
