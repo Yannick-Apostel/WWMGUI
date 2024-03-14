@@ -3,6 +3,7 @@ package application;
 import java.io.IOException;
 
 import application.WWM.Frage;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,6 +28,8 @@ public class gameviewController {
 	Button btnAnswC;
 	@FXML
 	Button btnAnswD;
+	@FXML
+	Button btnLeave;
 	@FXML
 	Label label1;
 
@@ -77,13 +80,17 @@ public class gameviewController {
 		;
 	}
 
+	public void btndown_leave(ActionEvent e) throws IOException {
+		Platform.exit();
+		System.exit(0);
+	}
+
 	public void nächsteFrage() {
 
 		zeigeFrage(Main.nF());
 	}
 
 	public void switchToJoker(ActionEvent event) throws IOException {
-
 		root2 = FXMLLoader.load(getClass().getResource("Joker.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root2);
@@ -94,7 +101,6 @@ public class gameviewController {
 	}
 
 	public void switchToTryAgain(ActionEvent event) throws IOException {
-
 		root2 = FXMLLoader.load(getClass().getResource("tryAgain.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root2);
