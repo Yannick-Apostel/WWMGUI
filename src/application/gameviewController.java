@@ -31,6 +31,12 @@ public class gameviewController {
 	@FXML
 	Button btnLeave;
 	@FXML
+	Button btnPJ;
+	@FXML
+	Button btnFFJ;
+	@FXML
+	Button btnTJ;
+	@FXML
 	Label label1;
 
 	Frage aktuelleFrage;
@@ -43,6 +49,10 @@ public class gameviewController {
 		btnAnswC.setText(frage.getAntwortenListe().get(2).getText());
 		btnAnswD.setText(frage.getAntwortenListe().get(3).getText());
 	}
+	
+	public void setzeFrage() {
+		zeigeFrage(Main.getAktuelleFrage());
+	}
 
 	public void btndown_AnswA(ActionEvent e) throws IOException {
 		if (Main.antwortAuswertung(aktuelleFrage, 0) == false) {
@@ -51,6 +61,36 @@ public class gameviewController {
 			nächsteFrage();
 		}
 		;
+	}
+	public void btndown_btnFFJ(ActionEvent e) throws IOException {
+		int counter=0;
+		while(counter !=2) {
+			int rnd = (int)(Math.random()*4);
+			if(aktuelleFrage.getAntwortenListe().get(rnd).getIstRichtig()) {
+				
+			}else {
+				counter++;
+				String tmp = aktuelleFrage.getAntwortenListe().get(rnd).getText();
+					   if (tmp.equals(btnAnswA.getText())) {
+						   btnAnswA.setVisible(false);
+					// Button A unsichtbar machen
+						   System.out.println("A");
+				} else if (tmp.equals(btnAnswB.getText())) {
+					// Button B unsichtbar machen
+					System.out.println("B");
+					btnAnswB.setVisible(false);
+				} else if (tmp.equals(btnAnswC.getText())) {
+					// Button C unsichtbar machen
+					System.out.println("C");
+					btnAnswC.setVisible(false);
+				} else if (tmp.equals(btnAnswD.getText())) {
+					// Button D unsichtbar machen
+					btnAnswD.setVisible(false);
+					System.out.println("D");
+				}
+				
+			}}
+		btnFFJ.setVisible(false);
 	}
 
 	public void btndown_AnswB(ActionEvent e) throws IOException {

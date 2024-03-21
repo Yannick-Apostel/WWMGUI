@@ -58,6 +58,9 @@ public class Main extends Application {
 	public static Frage nF() {
 		 return wwm.getAktuellesSpiel().getNächsteFrage();
 	}
+	public static Frage getAktuelleFrage() {
+		return wwm.getAktuellesSpiel().getFrageNr(wwm.getAktuellesSpiel().getAktuelleFrage());
+	}
 	
 	public static boolean antwortAuswertung(Frage aktuelleFrage, int antwort) {
         if (aktuelleFrage.getAntwortenListe().get(antwort).getIstRichtig()==true) {
