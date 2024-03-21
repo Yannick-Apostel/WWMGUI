@@ -92,6 +92,56 @@ public class gameviewController {
 			}}
 		btnFFJ.setVisible(false);
 	}
+	
+	public void btndown_btnPJ(ActionEvent e) throws IOException {
+		int counterA=0;
+		int counterB=0;
+		int counterC=0;
+		int counterD=0;
+		int extraCounter =0;
+		int counterWhile=0;
+		while(counterWhile<100) {
+			int rnd = (int)(Math.random()*5);
+			if(rnd ==0) {
+				counterA++;
+			}else if(rnd == 1) {
+				counterB++;
+			}else if(rnd == 2) {
+				counterC++;
+			}else if(rnd == 3) {
+				counterD++;
+			}else if(rnd == 4) {
+				extraCounter++;
+			}
+			counterWhile++;
+		}
+		System.out.println("A: "+ counterA);
+		System.out.println("B: "+ counterB);
+		System.out.println("C: "+ counterC);
+		System.out.println("D: "+ counterD);
+		System.out.println("E: "+ extraCounter);
+		
+		int rnd = (int)(Math.random()*4);
+		if(rnd ==0) {
+			counterA+=extraCounter;
+		}else if(rnd == 1) {
+			counterB+=extraCounter;
+		}else if(rnd == 2) {
+			counterC+=extraCounter;
+		}else if(rnd == 3) {
+			counterD+=extraCounter;
+		}
+		
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("PJ_BarChart.fxml"));
+		Parent root1 = (Parent)fxmlLoader.load();
+		Stage stage = new Stage();
+		stage.setScene(new Scene(root1));
+		stage.show();
+		BarChartController sceneController = fxmlLoader.getController();
+		
+		sceneController.erstelle(counterA, counterB, counterC, counterD);
+	}
+	
 
 	public void btndown_AnswB(ActionEvent e) throws IOException {
 		if (Main.antwortAuswertung(aktuelleFrage, 1) == false) {

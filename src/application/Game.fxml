@@ -14,6 +14,6 @@
       <Button id="btnLeave" fx:id="btnLeave" layoutX="14.0" layoutY="564.0" mnemonicParsing="false" onAction="#btndown_leave" text="Spiel beenden" />
       <Button fx:id="btnTJ" layoutX="1021.0" layoutY="194.0" mnemonicParsing="false" text="btnTJ" />
       <Button fx:id="btnFFJ" layoutX="1018.0" layoutY="256.0" mnemonicParsing="false" onAction="#btndown_btnFFJ" text="btnFFJ" />
-      <Button fx:id="btnPJ" layoutX="1021.0" layoutY="342.0" mnemonicParsing="false" text="btnPJ" />
+      <Button fx:id="btnPJ" layoutX="1021.0" layoutY="342.0" mnemonicParsing="false" onAction="#btndown_btnPJ" text="btnPJ" />
    </children>
 </AnchorPane>
