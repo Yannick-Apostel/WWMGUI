@@ -101,7 +101,7 @@ public class WWM
     public Frage getFrageFromFragenKatalog(int level) {
         for(Frage aktuelleFrage:fragenKatalog) {
             if(aktuelleFrage.getStufe().getLevel()==level && aktuelleFrage.getWurdeSchonMalBenutzt()==false ){
-                aktuelleFrage.setWurdeSchonMalBenutzt(true);
+                //aktuelleFrage.setWurdeSchonMalBenutzt(true);
                 return aktuelleFrage;
             }
         }
