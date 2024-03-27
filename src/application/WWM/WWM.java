@@ -1,5 +1,10 @@
 package application.WWM;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 public class WWM
 {
@@ -44,14 +49,14 @@ public class WWM
         }
     }
     
-    public WWM(){
+    public WWM() throws ClassNotFoundException, SQLException{
         Services services = new Services();
-        services.leseFragen();
+        services.getFragenDB();
         for(int i=1 ; 15>=i ; i++){
             Stufe stufe = new Stufe(i);
             services.setRandomFrage(stufe.getGeld());
             
-            Frage frage = new Frage("" + i, services.getCurrentFrage()[1], stufe);
+            Frage frage = new Frage("" + i, services.getCurrentFrage()[0], stufe);
             
             int rng1 = (int)(Math.random() * 4) + 1;
             int rng2 = (int)(Math.random() * 4) + 1;
@@ -69,21 +74,87 @@ public class WWM
             
             for (int j=1 ; j<=4 ; j++) {
                 if (rng1==j) {
-                    frage.addAntwort(services.getCurrentFrage()[2], true);
+                    frage.addAntwort(services.getCurrentFrage()[1], true);
                 }
                 else if (rng2==j) {
-                    frage.addAntwort(services.getCurrentFrage()[3], false);
+                    frage.addAntwort(services.getCurrentFrage()[2], false);
                 }
                 else if (rng3==j) {
-                    frage.addAntwort(services.getCurrentFrage()[4], false);
+                    frage.addAntwort(services.getCurrentFrage()[3], false);
                 }
                 else if (rng4==j) {
-                    frage.addAntwort(services.getCurrentFrage()[5], false);
+                    frage.addAntwort(services.getCurrentFrage()[4], false);
                 }
             }
             
             fragenKatalog.add(frage);
         }
+    }
+    
+    public void test(){
+    	 Services services = new Services();
+    	try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String url = "jdbc:MySQL://localhost:3306/wmm_question";
+			String user ="root";
+			String pass ="";
+			
+			Connection con = DriverManager.getConnection(url, user, pass);
+			Statement st = con.createStatement();
+			
+			//ResultSet rs= st.executeQuery(query);
+			//while(rs.next()) {
+			//	System.out.println(rs.getString("Stufe"));
+			
+			
+			
+			for(int i=1; i<=15;i++) {
+				Frage frage = null;
+				
+				Stufe stufe = new Stufe(i);
+				services.setRandomFrage(stufe.getGeld());
+				String query ="Select * from question Where Stufe="+i;
+				ResultSet rs= st.executeQuery(query);
+				
+				while(rs.next()) {
+					frage= new Frage(""+i, rs.getString("Frage"), stufe); 
+				}
+				 int rng1 = (int)(Math.random() * 4) + 1;
+		            int rng2 = (int)(Math.random() * 4) + 1;
+		            int rng3 = (int)(Math.random() * 4) + 1;
+		            int rng4 = (int)(Math.random() * 4) + 1;
+		            while (rng2==rng1) {
+		                rng2 = (int)(Math.random() * 4) + 1;
+		            }
+		            while (rng3==rng1 || rng3==rng2) {
+		                rng3 = (int)(Math.random() * 4) + 1;
+		            }
+		            while (rng4==rng1 || rng4==rng2 || rng4==rng3) {
+		                rng4 = (int)(Math.random() * 4) + 1;
+		            }
+		            
+		            for (int j=1 ; j<=4 ; j++) {
+		                if (rng1==j) {
+		                    frage.addAntwort(rs.getString("Richtige_Antwort"), true);
+		                }
+		                else if (rng2==j) {
+		                    frage.addAntwort(rs.getString("Falsche_Antwort_1"), false);
+		                }
+		                else if (rng3==j) {
+		                    frage.addAntwort(rs.getString("Falsche_Antwort_2"), false);
+		                }
+		                else if (rng4==j) {
+		                    frage.addAntwort(rs.getString("Falsche_Antwort_3"), false);
+		                }
+		            }
+		            
+		            fragenKatalog.add(frage);
+		        }
+			
+				
+		}catch(Exception ex) {
+			System.out.println("Error " + ex.getMessage());
+		}
     }
     
     public void setFragenKatalog(ArrayList<Frage> fragenKatalog) {

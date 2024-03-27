@@ -2,6 +2,9 @@ package application;
 
 	
 import application.WWM.altGUI;
+
+import java.sql.SQLException;
+
 import application.WWM.Frage;
 import application.WWM.Spiel;
 import application.WWM.Stufe;
@@ -39,7 +42,7 @@ public class Main extends Application {
 	
 	private static WWM wwm;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		wwm = new WWM();
 		wwm.erstelleSpiel();
 		launch(args);
@@ -56,11 +59,22 @@ public class Main extends Application {
       	}
 	}
 	
-	public static Frage nF() {
-		 return wwm.getAktuellesSpiel().getNächsteFrage();
+	public static Object nF() {
+		if(wwm.getAktuellesSpiel().getAktuelleFrage()<14) {
+			 return wwm.getAktuellesSpiel().getNächsteFrage();
+		}else {
+			System.out.println("Spiel vorbei - Gewonnen");
+		}
+		return null;
 	}
-	public static Frage getAktuelleFrage() {
-		return wwm.getAktuellesSpiel().getFrageNr(wwm.getAktuellesSpiel().getAktuelleFrage());
+	public static Object getAktuelleFrage() {
+		if(wwm.getAktuellesSpiel().getAktuelleFrage()<15) {
+			return wwm.getAktuellesSpiel().getFrageNr(wwm.getAktuellesSpiel().getAktuelleFrage());
+		}
+		else {
+			System.out.println("Spiel vorbei - Gewonnen");
+		}
+		return null;
 	}
 	
 	public static Spiel getAktuellesSpiel() {

@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 
+import application.WWM.Frage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,11 +41,11 @@ public class JokerController {
 		int counter=0;
 		while(counter !=2) {
 			int rnd = (int)(Math.random()*3);
-			if(Main.getAktuelleFrage().getAntwortenListe().get(rnd).getIstRichtig()) {
+			if((((Frage) Main.getAktuelleFrage()).getAntwortenListe().get(rnd).getIstRichtig())) {
 				
 			}else {
 				counter++;
-				String tmp = Main.getAktuelleFrage().getAntwortenListe().get(rnd).getText();
+				String tmp = ((Frage) Main.getAktuelleFrage()).getAntwortenListe().get(rnd).getText();
 					   if (tmp.equals(sceneController.btnAnswA.getText())) {
 						   sceneController.btnAnswA.setVisible(false);
 					// Button A unsichtbar machen
