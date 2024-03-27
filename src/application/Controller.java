@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Controller {
@@ -23,27 +24,24 @@ public class Controller {
 	private Parent root2;
 	
 	private int countBestätigen=0;
-	@FXML ToggleGroup   VBox; 
-	 
-	
-	
-	
-	
-	
-	
+	@FXML 
+	private ToggleGroup   VBox; 
+	@FXML
+	private Label lblTop;
+	@FXML
+	private Label lblBot;
 	
 	public void switchToSetJoker(ActionEvent event) throws IOException {
-		
-		    root2 = FXMLLoader.load(getClass().getResource("prevMenu.fxml"));
-		    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-	        scene = new Scene(root2);
-	        scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-	        stage.setScene(scene);
-	        stage.show();
-	        System.out.println("Succed!");
+	    root2 = FXMLLoader.load(getClass().getResource("prevMenu.fxml"));
+	    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root2);
+        scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+        System.out.println("Succed!");
 	}
+	
 	public void switchToJoker(ActionEvent event) throws IOException {
-		
 	    root2 = FXMLLoader.load(getClass().getResource("Joker.fxml"));
 	    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root2);
@@ -52,19 +50,12 @@ public class Controller {
         stage.show();
         System.out.println("Succed!");
 	 } 
-		 
-	
-	
-	
 	
 	public void ssBestaetigen(ActionEvent e) throws IOException {
 		countBestätigen++;
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("prevMenu.fxml"));
 		Parent root = loader.load();
-		
-		
-		
 		
 		RadioButton selectedRadioButton = (RadioButton) VBox.getSelectedToggle();
 		String toogleGroupValue = selectedRadioButton.getText();
@@ -105,14 +96,14 @@ public class Controller {
             	System.out.println("Lol");
             }
             
-            
-            
             Main.ssSetzen(stufe);
             if(countBestätigen ==2) {
             	switchToGameView(e);
+            } else {
+            	lblTop.setText("Setzen Sie Ihre zweite Sicherheitsstufe");
+            	lblBot.setVisible(true);
             }
 	}
-	
 	
 	public void switchToGameView(ActionEvent event) throws IOException {
 		FXMLLoader scene2Loader = new FXMLLoader(getClass().getResource("Game.fxml"));
@@ -127,10 +118,7 @@ public class Controller {
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		stage.setScene(scene);
 		stage.show();
-			
 		
-		
-		//Main.naechsteFrage(lblQuestion);
 	}
 	
 	public void switchToMenu(ActionEvent event) throws IOException {
@@ -141,9 +129,4 @@ public class Controller {
         stage.setScene(scene);
         stage.show();
 	}
-	
-	
-	
-	
-
 }

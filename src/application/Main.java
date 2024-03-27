@@ -3,6 +3,7 @@ package application;
 	
 import application.WWM.altGUI;
 import application.WWM.Frage;
+import application.WWM.Spiel;
 import application.WWM.Stufe;
 import application.WWM.WWM;
 import javafx.application.Application;
@@ -58,6 +59,13 @@ public class Main extends Application {
 	public static Frage nF() {
 		 return wwm.getAktuellesSpiel().getNächsteFrage();
 	}
+	public static Frage getAktuelleFrage() {
+		return wwm.getAktuellesSpiel().getFrageNr(wwm.getAktuellesSpiel().getAktuelleFrage());
+	}
+	
+	public static Spiel getAktuellesSpiel() {
+		return wwm.getAktuellesSpiel();
+	}
 	
 	public static boolean antwortAuswertung(Frage aktuelleFrage, int antwort) {
         if (aktuelleFrage.getAntwortenListe().get(antwort).getIstRichtig()==true) {
@@ -68,5 +76,10 @@ public class Main extends Application {
             return false;
         }
     }
+	
+	public static void neuesSpiel() {
+		wwm.addSpielToSpielHistorie(wwm.getAktuellesSpiel());
+		wwm.erstelleSpiel();
+	}
 	
 }

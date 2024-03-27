@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 
+import application.WWM.WWM;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +23,7 @@ public class tryAgainController {
 	}
 	public void btndown_New(ActionEvent event) throws IOException {
 		
+		Main.neuesSpiel();
 		root2 = FXMLLoader.load(getClass().getResource("Main.fxml"));
 	    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root2);

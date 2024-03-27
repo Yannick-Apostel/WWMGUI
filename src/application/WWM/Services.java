@@ -19,7 +19,7 @@ public class Services
         String line = "";
         fragen = new String[1][];
         try {
-            BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\apost\\OneDrive - Stadt Hamm für Friedrich-List-Berufskolleg\\Schule\\MI2A12\\IFKT\\GUI\\WWMGUI\\src\\application\\WWM\\Fragen.csv"));
+            BufferedReader br = new BufferedReader(new FileReader("src/application/Fragen.csv"));
             int zeile = 0;
             
             while ((line = br.readLine()) != null) {
