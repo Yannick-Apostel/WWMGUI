@@ -1,8 +1,11 @@
 package application.WWM;
 
+
+
 import javax.swing.*;
 import java.awt.Font;
 import java.io.File;
+import java.sql.SQLException;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.BorderLayout;
@@ -32,7 +35,7 @@ public class altGUI
     
     private JTextArea frageText;
     
-    private WWM wwm = new WWM();
+    private WWM wwm;
     private int beantworteteFragen = 0;
     Font font = new Font("Arial", Font.PLAIN, 20);
     

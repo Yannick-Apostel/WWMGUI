@@ -2,11 +2,17 @@ package application.WWM;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Random;
 import java.util.Arrays;
 
 public class Services
 {
+	int counter=0;
     private String[][] fragen;
     private String[] currFrage;
     
@@ -43,12 +49,107 @@ public class Services
         }
     }
     
+    public void getFragenDB() throws ClassNotFoundException, SQLException {
+   	 fragen = new String[15][7];
+   	Class.forName("com.mysql.cj.jdbc.Driver");
+		String url = "jdbc:MySQL://localhost:3306/wmm_question";
+		String user ="root";
+		String pass ="";
+		
+		
+		
+		for(int i=0; i<16; i++) {
+		Connection con = DriverManager.getConnection(url, user, pass);
+		Statement st = con.createStatement();
+			String query ="Select * from question Where Stufe="+(i+1);
+			ResultSet rs= st.executeQuery(query);
+			while(rs.next()) {
+				fragen[i][0]= rs.getString("Frage");
+			}
+			
+		}	
+		 
+		for(int i=0; i<16; i++) {
+			Connection con = DriverManager.getConnection(url, user, pass);
+			Statement st = con.createStatement();
+				String query ="Select * from question Where Stufe="+(i+1);
+				ResultSet rs= st.executeQuery(query);
+				while(rs.next()) {
+					fragen[i][1]= rs.getString("Richtige_Antwort");
+				}
+				
+				
+			 
+			}
+		for(int i=0; i<16; i++) {
+			Connection con = DriverManager.getConnection(url, user, pass);
+			Statement st = con.createStatement();
+				String query ="Select * from question Where Stufe="+(i+1);
+				ResultSet rs= st.executeQuery(query);
+				while(rs.next()) {
+					fragen[i][2]= rs.getString("Falsche_Antwort_1");
+				}
+				
+				
+			 
+			}
+		for(int i=0; i<16; i++) {
+			Connection con = DriverManager.getConnection(url, user, pass);
+			Statement st = con.createStatement();
+				String query ="Select * from question Where Stufe="+(i+1);
+				ResultSet rs= st.executeQuery(query);
+				while(rs.next()) {
+					fragen[i][3]= rs.getString("Falsche_Antwort_2");
+				}
+				
+				
+			 
+			}
+		for(int i=0; i<16; i++) {
+			Connection con = DriverManager.getConnection(url, user, pass);
+			Statement st = con.createStatement();
+				String query ="Select * from question Where Stufe="+(i+1);
+				ResultSet rs= st.executeQuery(query);
+				while(rs.next()) {
+					fragen[i][4]= rs.getString("Falsche_Antwort_3");
+				}
+				
+				
+			 
+			}for(int i=0; i<16; i++) {
+				Connection con = DriverManager.getConnection(url, user, pass);
+				Statement st = con.createStatement();
+					String query ="Select * from question Where Stufe="+(i+1);
+					ResultSet rs= st.executeQuery(query);
+					while(rs.next()) {
+						fragen[i][5]= rs.getString("Stufe");
+					}
+					
+					
+				 
+				}
+			for(int i=0; i<16; i++) {
+				Connection con = DriverManager.getConnection(url, user, pass);
+				Statement st = con.createStatement();
+					String query ="Select * from question Where Stufe="+(i+1);
+					ResultSet rs= st.executeQuery(query);
+					while(rs.next()) {
+						fragen[i][6]= rs.getString("Stufe_String");
+					}
+					
+					
+				 
+				}
+		
+   }
+    
+    
     public void setRandomFrage(int stufe) {
         Random random = new Random();
         String stufeString = "" + stufe;
         int rng = random.nextInt(fragen.length);
         
-        while (!fragen[rng][0].equals(stufeString)) {
+        while (!fragen[rng][6].equals(stufeString)) {
             rng = random.nextInt(fragen.length);
         }
         

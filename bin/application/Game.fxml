@@ -11,9 +11,10 @@
       <Button fx:id="btnAnswB" layoutX="522.0" layoutY="382.0" mnemonicParsing="false" onAction="#btndown_AnswB" prefHeight="25.0" prefWidth="180.0" text="btnAnswB" />
       <Button fx:id="btnAnswC" layoutX="140.0" layoutY="465.0" mnemonicParsing="false" onAction="#btndown_AnswC" prefHeight="25.0" prefWidth="180.0" text="btnAnswC" />
       <Button fx:id="btnAnswD" layoutX="522.0" layoutY="465.0" mnemonicParsing="false" onAction="#btndown_AnswD" prefHeight="25.0" prefWidth="180.0" text="btnAnswD" />
-      <Button id="btnLeave" fx:id="btnLeave" layoutX="14.0" layoutY="564.0" mnemonicParsing="false" onAction="#btndown_leave" text="Spiel beenden" />
-      <Button fx:id="btnTJ" layoutX="1021.0" layoutY="194.0" mnemonicParsing="false" onAction="#btndown_btnTJ" text="btnTJ" />
+      <Button id="btnLeave" fx:id="btnLeave" layoutX="14.0" layoutY="564.0" mnemonicParsing="false" onAction="#TestDBConection" text="Spiel beenden" />
+      <Button fx:id="btnTJ" layoutX="1021.0" layoutY="194.0" mnemonicParsing="false" text="btnTJ" />
       <Button fx:id="btnFFJ" layoutX="1018.0" layoutY="256.0" mnemonicParsing="false" onAction="#btndown_btnFFJ" text="btnFFJ" />
       <Button fx:id="btnPJ" layoutX="1021.0" layoutY="342.0" mnemonicParsing="false" onAction="#btndown_btnPJ" text="btnPJ" />
+      <Button fx:id="btnRestart" layoutX="371.0" layoutY="382.0" mnemonicParsing="false" onAction="#btndown_Restart" text="Nochmal?" visible="false" />
    </children>
 </AnchorPane>
