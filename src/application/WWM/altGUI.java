@@ -1,7 +1,5 @@
 package application.WWM;
 
-
-
 import javax.swing.*;
 import java.awt.Font;
 import java.io.File;
