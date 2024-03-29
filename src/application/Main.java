@@ -95,5 +95,11 @@ public class Main extends Application {
 		wwm.addSpielToSpielHistorie(wwm.getAktuellesSpiel());
 		wwm.erstelleSpiel();
 	}
+	public static int getGeld() {
+		return wwm.getGewonnenesGeld();
+	}
+	public static void setGeld(int geld) {
+		wwm.setGewonnenesgeld(geld);
+	}
 	
 }

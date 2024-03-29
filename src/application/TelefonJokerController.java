@@ -17,6 +17,8 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import application.WWM.Frage;
+
 public class TelefonJokerController {
 	
 	@FXML
@@ -230,7 +232,7 @@ public class TelefonJokerController {
 	public char getAntwort(boolean richtig) {
 		if (richtig) {
 			for (int i = 0 ; i<4 ; i++) {
-				if (Main.getAktuelleFrage().getAntwortenListe().get(i).getIstRichtig()) {
+				if (((Frage) Main.getAktuelleFrage()).getAntwortenListe().get(i).getIstRichtig()) {
 					switch (i) {
 					case 0: return 'A';
 					case 1: return 'B';
@@ -242,7 +244,7 @@ public class TelefonJokerController {
 		} else {
 			while (true) {
 				int rng = (int)(Math.random() * ((4 - 1) + 1) + 1);
-				if (Main.getAktuelleFrage().getAntwortenListe().get(rng-1).getIstRichtig() == false) {
+				if (((Frage) Main.getAktuelleFrage()).getAntwortenListe().get(rng-1).getIstRichtig() == false) {
 					switch (rng) {
 					case 1: return 'A';
 					case 2: return 'B';

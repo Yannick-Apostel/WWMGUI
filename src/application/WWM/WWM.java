@@ -10,6 +10,7 @@ public class WWM
 {
     private ArrayList<Frage> fragenKatalog = new ArrayList<Frage>();
     private ArrayList<Spiel> spielHistorie = new ArrayList<Spiel>();
+    private int gewonnenensGeld =0;
     private Spiel aktuellesSpiel = null;
     
     public WWM(int anzahlZuGenerierenderTestFragen){
@@ -189,6 +190,12 @@ public class WWM
     }
     public ArrayList<Spiel> getSpielHistorie() {
         return this.spielHistorie;
+    }
+    public void setGewonnenesgeld(int geld) {
+    	gewonnenensGeld=geld;
+    }
+    public int getGewonnenesGeld() {
+    	return gewonnenensGeld;
     }
     public void addSpielToSpielHistorie(Spiel spiel) {
         this.spielHistorie.add(spiel);

@@ -89,11 +89,21 @@ public class gameviewController {
 
 	public void btndown_AnswA(ActionEvent e) throws IOException {
 		if (Main.antwortAuswertung(aktuelleFrage, 0) == false) {
+			if(((Frage)(Main.getAktuelleFrage())).getStufe().getLevel() >= (Main.getAktuellesSpiel().getSicherheitsStufe2().getLevel())-1) {
+				Main.setGeld(Main.getAktuellesSpiel().getSicherheitsStufe2().getGeld());
+				System.out.println("Sicherheitstufe 2");
+			}else if(((Frage)(Main.getAktuelleFrage())).getStufe().getLevel() >= (Main.getAktuellesSpiel().getSicherheitsStufe1().getLevel())-1) {
+				System.out.println("Sicherheitstufe 1");
+				Main.setGeld(Main.getAktuellesSpiel().getSicherheitsStufe1().getGeld());
+			}
 			switchToTryAgain(e);
+			
 		} else {
 			nächsteFrage();
 		}
 		;
+		
+		
 	}
 public void btndown_Restart(ActionEvent event) throws IOException {
 		
@@ -198,9 +208,30 @@ public void btndown_Restart(ActionEvent event) throws IOException {
 		
 		sceneController.erstelle(counterA, counterB, counterC, counterD);
 	}
+	public void btndown_btnTJ(ActionEvent e) throws IOException {
+		if (Main.getAktuellesSpiel().getTelefonjoker()) {
+			Main.getAktuellesSpiel().setTelefonjoker(false);
+			
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TelefonJoker.fxml"));
+			Parent root1 = (Parent)fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root1));
+			stage.show();
+			
+			btnTJ.setVisible(false);
+		}
+	}
+	
 
 	public void btndown_AnswB(ActionEvent e) throws IOException {
 		if (Main.antwortAuswertung(aktuelleFrage, 1) == false) {
+			if(((Frage)(Main.getAktuelleFrage())).getStufe().getLevel() >= (Main.getAktuellesSpiel().getSicherheitsStufe2().getLevel())-1) {
+				Main.setGeld(Main.getAktuellesSpiel().getSicherheitsStufe2().getGeld());
+				System.out.println("Sicherheitstufe 2");
+			}else if(((Frage)(Main.getAktuelleFrage())).getStufe().getLevel() >= (Main.getAktuellesSpiel().getSicherheitsStufe1().getLevel())-1) {
+				System.out.println("Sicherheitstufe 1");
+				Main.setGeld(Main.getAktuellesSpiel().getSicherheitsStufe1().getGeld());
+			}
 			switchToTryAgain(e);
 		} else {
 			nächsteFrage();
@@ -210,6 +241,13 @@ public void btndown_Restart(ActionEvent event) throws IOException {
 
 	public void btndown_AnswC(ActionEvent e) throws IOException {
 		if (Main.antwortAuswertung(aktuelleFrage, 2) == false) {
+			if(((Frage)(Main.getAktuelleFrage())).getStufe().getLevel() >= (Main.getAktuellesSpiel().getSicherheitsStufe2().getLevel())-1) {
+				Main.setGeld(Main.getAktuellesSpiel().getSicherheitsStufe2().getGeld());
+				System.out.println("Sicherheitstufe 2");
+			}else if(((Frage)(Main.getAktuelleFrage())).getStufe().getLevel() >= (Main.getAktuellesSpiel().getSicherheitsStufe1().getLevel())-1) {
+				System.out.println("Sicherheitstufe 1");
+				Main.setGeld(Main.getAktuellesSpiel().getSicherheitsStufe1().getGeld());
+			}
 			switchToTryAgain(e);
 		} else {
 			nächsteFrage();
@@ -219,6 +257,13 @@ public void btndown_Restart(ActionEvent event) throws IOException {
 
 	public void btndown_AnswD(ActionEvent e) throws IOException {
 		if (Main.antwortAuswertung(aktuelleFrage, 3) == false) {
+			if(((Frage)(Main.getAktuelleFrage())).getStufe().getLevel() >= (Main.getAktuellesSpiel().getSicherheitsStufe2().getLevel())-1) {
+				Main.setGeld(((Main.getAktuellesSpiel().getSicherheitsStufe2())).getGeld());
+				System.out.println("Sicherheitstufe 2");
+			}else if(((Frage)(Main.getAktuelleFrage())).getStufe().getLevel() >= (Main.getAktuellesSpiel().getSicherheitsStufe1().getLevel())-1) {
+				System.out.println("Sicherheitstufe 1");
+				Main.setGeld(Main.getAktuellesSpiel().getSicherheitsStufe1().getGeld());
+			}
 			switchToTryAgain(e);
 		} else {
 			nächsteFrage();
@@ -251,37 +296,12 @@ public void btndown_Restart(ActionEvent event) throws IOException {
 		scene = new Scene(root2);
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		stage.setScene(scene);
+		FXMLLoader scene2Loader = new FXMLLoader(getClass().getResource("tryAgain.fxml"));
+		root2 = scene2Loader.load();
+		tryAgainController sceneController = scene2Loader.getController();
 		stage.show();
+		sceneController.setzeText();
+		
 
-	}
-	
-	public void TestDBConection(ActionEvent e) {
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			String url = "jdbc:MySQL://localhost:3306/wmm_question";
-			String user ="root";
-			String pass ="";
-			
-			Connection con = DriverManager.getConnection(url, user, pass);
-			Statement st = con.createStatement();
-			/*String query1 ="Select * from question Where Stufe=1";
-			ResultSet rs1= st.executeQuery(query1);
-			while(rs1.next()) {
-				System.out.println(rs1.getString("Frage"));
-			}*/
-			for(int i=1; i<=15;i++) {
-				String query ="Select * from question Where Stufe="+i;
-				ResultSet rs= st.executeQuery(query);
-				while(rs.next()) {
-					System.out.println(rs.getString("Frage"));
-				}
-			}
-				
-		}catch(Exception ex) {
-			System.out.println("Error " + ex.getMessage());
-		}
-		
-		
-		
 	}
 }
