@@ -66,5 +66,10 @@
             <Font name="Arial Narrow Bold" size="25.0" />
          </font>
       </Label>
+      <Button fx:id="btnRestart" layoutX="441.0" layoutY="421.0" mnemonicParsing="false" onAction="#btndown_Restart" prefHeight="25.0" prefWidth="180.0" text="Neustart" visible="false">
+         <font>
+            <Font name="Arial Narrow Bold" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

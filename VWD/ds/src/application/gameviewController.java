@@ -153,6 +153,7 @@ public void btndown_Restart(ActionEvent event) throws IOException {
 	}
 	
 	public void btndown_btnPJ(ActionEvent e) throws IOException {
+		btnPJ.setVisible(false);
 		// TODO: nach pj auf true abfragen und pf am ende auf false setzen + pj button verstecken
 		int counterA=0;
 		int counterB=0;
