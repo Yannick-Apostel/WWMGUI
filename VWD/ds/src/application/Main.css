@@ -1,0 +1,32 @@
+root{
+	/*body*/
+}
+
+#lblTitle{ /*STart view */
+	-fx-alignment:center;
+	-fx-font-size: 45;
+}
+
+#lblQuestion{ /*Game View */
+	-fx-alignment:center;
+	-fx-font-size: 45;
+}
+
+.button{
+	-fx-background-color:  #FFFFFF;
+	-fx-background-radius: 80 80 80 80;
+	-fx-alignment: center;
+}
+.button:hover{
+	-fx-background-color:   #00225E;
+	
+	-fx-background-radius: 80 80 80 80;
+}
+.button:pressed{
+	-fx-background-color:  #FFFFFF;
+	-fx-background-radius: 80 80 80 80;
+}
+
+.imageview{
+	-fx-alignment: center;
+}

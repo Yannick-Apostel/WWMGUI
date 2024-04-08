@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="1242.0" style="-fx-background-color: #27408B;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <ImageView fitHeight="810.0" fitWidth="1249.0" layoutX="210.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Hintergrund/abstract-modern-geometric-light-blue-background-with-white-spot-copy-space-vector-illustration_213291-440-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="705.0" fitWidth="431.0" layoutX="-21.0" layoutY="-31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Hintergrund/shape-02-1.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="298.0" layoutY="81.0" prefHeight="442.0" prefWidth="223.0">
+         <children>
+            <RadioButton fx:id="rb1" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" selected="true" text="50€" textFill="WHITE">
+               <toggleGroup>
+                  <ToggleGroup fx:id="VBox" />
+               </toggleGroup>
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.76" />
+               </effect>
+            </RadioButton>
+            <RadioButton fx:id="rb2" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" text="100€" textFill="WHITE" toggleGroup="$VBox">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.76" />
+               </effect></RadioButton>
+            <RadioButton fx:id="rb3" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" text="200€" textFill="WHITE" toggleGroup="$VBox">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.76" />
+               </effect></RadioButton>
+            <RadioButton fx:id="rb4" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" text="300€" textFill="WHITE" toggleGroup="$VBox">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.76" />
+               </effect></RadioButton>
+            <RadioButton fx:id="rb5" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" text="500€" textFill="WHITE" toggleGroup="$VBox">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.76" />
+               </effect></RadioButton>
+            <RadioButton fx:id="rb6" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" text="1.000€" textFill="WHITE" toggleGroup="$VBox">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.76" />
+               </effect></RadioButton>
+            <RadioButton fx:id="rb7" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" text="2.000€" textFill="WHITE" toggleGroup="$VBox">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.76" />
+               </effect></RadioButton>
+            <RadioButton fx:id="rb8" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" text="4.000€" textFill="WHITE" toggleGroup="$VBox">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.76" />
+               </effect></RadioButton>
+            <RadioButton fx:id="rb9" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" text="8.000€" textFill="WHITE" toggleGroup="$VBox">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.76" />
+               </effect></RadioButton>
+            <RadioButton fx:id="rb10" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" text="16.000€" textFill="WHITE" toggleGroup="$VBox">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.76" />
+               </effect></RadioButton>
+            <RadioButton fx:id="rb11" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" text="32.000€" textFill="WHITE" toggleGroup="$VBox">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.76" />
+               </effect>
+            </RadioButton>
+            <RadioButton fx:id="rb12" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" text="64.000€" textFill="WHITE" toggleGroup="$VBox">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.76" />
+               </effect></RadioButton>
+            <RadioButton fx:id="rb13" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" text="125.000€" textFill="WHITE" toggleGroup="$VBox">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.76" />
+               </effect></RadioButton>
+            <RadioButton fx:id="rb14" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" text="500.000€" textFill="WHITE" toggleGroup="$VBox">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.76" />
+               </effect></RadioButton>
+            <RadioButton fx:id="rb15" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" text="1.000.000€" textFill="WHITE" toggleGroup="$VBox">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.76" />
+               </effect></RadioButton>
+         </children>
+      </VBox>
+      <Button layoutX="14.0" layoutY="552.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="37.0" prefWidth="110.0" style="-fx-background-color: #FFFF;" text="Zurück">
+         <font>
+            <Font name="Arial Narrow Bold" size="18.0" />
+         </font></Button>
+      <Button layoutX="725.0" layoutY="293.0" mnemonicParsing="false" onAction="#ssBestaetigen" style="-fx-background-color: #FFFFFF;" text="Bestätigen">
+         <font>
+            <Font name="Arial Narrow Bold" size="18.0" />
+         </font></Button>
+      <ImageView fitHeight="69.0" fitWidth="342.0" layoutX="924.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Hintergrund/wwmeigenLogo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
