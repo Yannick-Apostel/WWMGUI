@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="1242.0" style="-fx-background-color: #27408B;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.gameviewController">
+   <children>
+      <ImageView fitHeight="810.0" fitWidth="1249.0" layoutX="190.0" layoutY="-21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Hintergrund/abstract-modern-geometric-light-blue-background-with-white-spot-copy-space-vector-illustration_213291-440-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="705.0" fitWidth="431.0" layoutX="-44.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Hintergrund/shape-02-1.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="label1" alignment="TOP_LEFT" layoutX="217.0" layoutY="98.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="132.0" prefWidth="686.0" text="Text" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Arial Narrow Bold" size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnAnswA" layoutX="261.0" layoutY="361.0" mnemonicParsing="false" onAction="#btndown_AnswA" prefHeight="25.0" prefWidth="180.0" text="btnAnswA">
+         <font>
+            <Font name="Arial Narrow Bold" size="18.0" />
+         </font></Button>
+      <Button fx:id="btnAnswB" layoutX="621.0" layoutY="361.0" mnemonicParsing="false" onAction="#btndown_AnswB" prefHeight="25.0" prefWidth="180.0" text="btnAnswB">
+         <font>
+            <Font name="Arial Narrow Bold" size="18.0" />
+         </font></Button>
+      <Button fx:id="btnAnswC" layoutX="261.0" layoutY="475.0" mnemonicParsing="false" onAction="#btndown_AnswC" prefHeight="25.0" prefWidth="180.0" text="btnAnswC">
+         <font>
+            <Font name="Arial Narrow Bold" size="18.0" />
+         </font></Button>
+      <Button fx:id="btnAnswD" layoutX="621.0" layoutY="475.0" mnemonicParsing="false" onAction="#btndown_AnswD" prefHeight="25.0" prefWidth="180.0" text="btnAnswD">
+         <font>
+            <Font name="Arial Narrow Bold" size="18.0" />
+         </font></Button>
+      <Button id="btnLeave" fx:id="btnLeave" layoutX="14.0" layoutY="556.0" mnemonicParsing="false" onAction="#btndown_leave" text="Spiel beenden">
+         <font>
+            <Font name="Arial Narrow Bold" size="18.0" />
+         </font></Button>
+      <Button fx:id="btnTJ" layoutX="1057.0" layoutY="199.0" mnemonicParsing="false" onAction="#btndown_btnTJ" prefHeight="33.0" prefWidth="151.0" text="Telefonjoker">
+         <font>
+            <Font name="Arial Narrow Bold" size="17.0" />
+         </font></Button>
+      <Button fx:id="btnFFJ" layoutX="1057.0" layoutY="269.0" mnemonicParsing="false" onAction="#btndown_btnFFJ" prefHeight="33.0" prefWidth="151.0" text="50/50 Joker">
+         <font>
+            <Font name="Arial Narrow Bold" size="17.0" />
+         </font></Button>
+      <Button fx:id="btnPJ" layoutX="1057.0" layoutY="345.0" mnemonicParsing="false" onAction="#btndown_btnPJ" prefHeight="33.0" prefWidth="151.0" text="Publikumsjoker">
+         <font>
+            <Font name="Arial Narrow Bold" size="17.0" />
+         </font></Button>
+      <ImageView fitHeight="69.0" fitWidth="342.0" layoutX="920.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Hintergrund/wwmeigenLogo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="1071.0" layoutY="134.0" text="Ihre Joker: " textFill="WHITE" underline="true">
+         <font>
+            <Font name="Arial Narrow Bold" size="25.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnRestart" layoutX="441.0" layoutY="421.0" mnemonicParsing="false" onAction="#btndown_Restart" prefHeight="25.0" prefWidth="180.0" text="Neustart" visible="false">
+         <font>
+            <Font name="Arial Narrow Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

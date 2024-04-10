@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelefonlisteController">
+   <children>
+      <TextArea editable="false" layoutX="25.0" layoutY="52.0" prefHeight="425.0" prefWidth="350.0" text="Vater: 5415 4757&#10;&#10;Mutter:  5113 2635&#10;&#10;Bester Freund: 7299 2413&#10;&#10;Mitschüler: 3416 1214&#10;&#10;Nachbar: 4661 1939&#10;&#10;Pablo: 9974 1863" wrapText="true">
+         <font>
+            <Font name="Arial Narrow Bold" size="32.0" />
+         </font></TextArea>
+      <Text layoutX="65.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefonliste" textAlignment="CENTER" underline="true" wrappingWidth="269.568359375">
+         <font>
+            <Font name="Calibri Light Italic" size="46.0" />
+         </font></Text>
+   </children>
+</Pane>

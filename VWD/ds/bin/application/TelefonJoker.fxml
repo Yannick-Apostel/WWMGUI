@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" style="-fx-border-radius: 20; -fx-background-color: #C7C7C7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelefonJokerController">
+   <children>
+      <Button fx:id="btn1" layoutX="46.0" layoutY="206.0" mnemonicParsing="false" onAction="#btndown_btn1" text="1">
+         <font>
+            <Font name="Arial Narrow Bold" size="16.0" />
+         </font></Button>
+      <Label fx:id="lblTitle" layoutX="82.0" layoutY="14.0" text="Telefonjoker">
+         <font>
+            <Font name="Arial Narrow Bold" size="17.0" />
+         </font></Label>
+      <Button fx:id="btn2" layoutX="113.0" layoutY="206.0" mnemonicParsing="false" onAction="#btndown_btn2" text="2">
+         <font>
+            <Font name="Arial Narrow Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="btn3" layoutX="181.0" layoutY="206.0" mnemonicParsing="false" onAction="#btndown_btn3" text="3">
+         <font>
+            <Font name="Arial Narrow Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="btn4" layoutX="45.0" layoutY="255.0" mnemonicParsing="false" onAction="#btndown_btn4" text="4">
+         <font>
+            <Font name="Arial Narrow Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="btn5" layoutX="112.0" layoutY="255.0" mnemonicParsing="false" onAction="#btndown_btn5" text="5">
+         <font>
+            <Font name="Arial Narrow Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="btn6" layoutX="180.0" layoutY="255.0" mnemonicParsing="false" onAction="#btndown_btn6" text="6">
+         <font>
+            <Font name="Arial Narrow Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="btn7" layoutX="46.0" layoutY="305.0" mnemonicParsing="false" onAction="#btndown_btn7" text="7">
+         <font>
+            <Font name="Arial Narrow Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="btn8" layoutX="113.0" layoutY="305.0" mnemonicParsing="false" onAction="#btndown_btn8" text="8">
+         <font>
+            <Font name="Arial Narrow Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="btn9" layoutX="181.0" layoutY="305.0" mnemonicParsing="false" onAction="#btndown_btn9" text="9">
+         <font>
+            <Font name="Arial Narrow Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="btn0" layoutX="113.0" layoutY="353.0" mnemonicParsing="false" onAction="#btndown_btn0" text="0">
+         <font>
+            <Font name="Arial Narrow Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="btnDel" layoutX="166.0" layoutY="353.0" mnemonicParsing="false" onAction="#btndown_btnDel" text="Delete">
+         <font>
+            <Font name="Arial Narrow Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="btnAn" layoutX="146.0" layoutY="162.0" mnemonicParsing="false" onAction="#btndown_btnAn" prefHeight="23.0" prefWidth="71.0" text="Anrufen">
+         <font>
+            <Font name="Arial Narrow Bold" size="12.0" />
+         </font></Button>
+      <TextArea fx:id="txtAr" editable="false" layoutX="25.0" layoutY="42.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-radius: 5;" wrapText="true">
+         <font>
+            <Font size="12.0" />
+         </font></TextArea>
+      <Button fx:id="btnList1" layoutX="33.0" layoutY="163.0" mnemonicParsing="false" onAction="#btndown_btnList" text="Telefonliste">
+         <font>
+            <Font name="Arial Narrow Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnSpace" layoutX="34.0" layoutY="353.0" mnemonicParsing="false" onAction="#btndown_btnSpace" text="Space">
+         <font>
+            <Font name="Arial Narrow Bold" size="16.0" />
+         </font></Button>
+   </children>
+</AnchorPane>
